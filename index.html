@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Meru Combinatorics 2023</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("meru.jpg");
+  min-height: 75%;
+}
+
+.menu {
+  display: none;
+}
+</style>
+</head>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#program" class="w3-button w3-block w3-black">PROGRAM</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#submit" class="w3-button w3-block w3-black">SUBMIT</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-center">
+    <div style="background-color: #00000080;"><span class="w3-text-white" style="font-size: 50px;">Meru Combinatorics 2023</span></div>
+  </div>
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT THE CONFERENCE</span></h5>
+    <p>This is the first of a series of annual conferences on combinatorics in India: the Meru Annual Combinatorics Conference.</p>
+    <p>
+      Meru stands for the sacred mountain of ancient Indian cosmology, and also for the triangle of binomial coefficients studied by Indian prosodists.
+    </p>
+    <!-- <div class="w3-panel w3-leftbar w3-light-grey"> -->
+    <!--   <p><i>"Use products from nature for what it's worth - but never too early, nor too late." Fresh is the new sweet.</i></p> -->
+    <!--   <p>Chef, Coffeeist and Owner: Liam Brown</p> -->
+    <!-- </div> -->
+    <p><strong>Dates:</strong> 28-05-2023 to 01-06-2023</p>
+    <p><strong>Venue:</strong> Pondicherry University</p>
+  </div>
+</div>
+
+<!-- Program Container -->
+<div class="w3-container" id="program">
+  <div class="w3-content" style="max-width:700px">
+ 
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">PROGRAM</span></h5>
+  
+    <div class="w3-row w3-center w3-card w3-padding">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'minic');" id="myLink">
+        <div class="w3-col s6 tablink">Minicourses</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'contrib');">
+        <div class="w3-col s6 tablink">Contributed Talks</div>
+      </a>
+    </div>
+
+    <div id="minic" class="w3-container menu w3-padding-48 w3-card">
+      <h5>Niranjan Ramachandran</h5>
+      <p class="w3-text-grey">To be announced</p><br>
+    
+      <h5>Santosha Kumar Pattanayak</h5>
+      <p class="w3-text-grey">To be announced</p><br>
+    </div>
+
+    <div id="contrib" class="w3-container menu w3-padding-48 w3-card">
+      <!-- <h5>Name</h5>
+      <p class="w3-text-grey">Title</p><br> -->
+      <h5>To be announced</h5>
+    </div>  
+  </div>
+</div>
+
+<!-- Contact/Area Container -->
+<div class="w3-container" id="submit" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">SUBMIT</span></h5>
+    <p>To submit an abstract for a contributed talk </p>
+    <h5>Submission Deadline: 01-05-2023.</h5>
+    <!-- <img src="" class="w3-image" style="width:100%"> -->
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
