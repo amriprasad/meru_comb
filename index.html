@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
 <style>
 body, html {
+  scroll-behavior: smooth;
   height: 100%;
   font-family: "Inconsolata", sans-serif;
 }
@@ -22,7 +23,20 @@ body, html {
 .menu {
   display: none;
 }
+
+#input {
+  resize: vertical;
+}
 </style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
 <body>
 
@@ -68,6 +82,13 @@ body, html {
     <!-- </div> -->
     <p><strong>Dates:</strong> 28-05-2023 to 01-06-2023</p>
     <p><strong>Venue:</strong> Pondicherry University</p>
+    <p><strong>Organising Committee:</strong></p>
+    <ul>
+      <li>A Joseph Kennedy (Pondicherry University)</li>
+      <li> Arvind Ayyer (IISc)</li>
+      <li> N Narayanan (IIT Madras)</li>
+      <li> S. Sivaramakrishnan (IIT Bombay)</li>
+    </ul>
   </div>
 </div>
 
@@ -106,11 +127,41 @@ body, html {
 <div class="w3-container" id="submit" style="padding-bottom:32px;">
   <div class="w3-content" style="max-width:700px">
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">SUBMIT</span></h5>
-    <p>To submit an abstract for a contributed talk </p>
+    <p>To submit an abstract for a contributed talk please fill out the form below.
+      Please keep the following points in mind.</p>
+      <ol>
+        <li>Avoid latex formatting in the title.</li>
+        <li>Latex formatting can be used in the abstract, but do not use any user-defined macros.
+          You may check that your abstract is displayed correctly by clicking on "preview".</li>
+        <li>A link to a preprint or published paper will help us evaluate your submission better.</li>
+        <li>Please check all fields carefully before hitting the "submit" button. Multiple submissions will be forwned upon.</li>
+      </ol>
+    </p>
     <h5>Submission Deadline: 01-05-2023.</h5>
     <!-- <img src="" class="w3-image" style="width:100%"> -->
+    <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSdX58aCrc4zqfyBaD07oYgpTtUecwoyWGjetY3ascFm-Vppag/formResponse" target="_self" method="POST">
+          <label class="w3-tag w3-transparent w3-text-black w3-large">*Name: </label><br>
+          <input class="w3-input w3-padding-16 w3-border" required ="text" placeholder="Name" name="entry.516985983"><br>
+          <label>*E-mail address</label><br>
+          <input class="w3-input w3-padding-16 w3-border" type="email" placeholder="E-mail" required name="entry.133805772"><br>
+          <label class="w3-tag w3-transparent w3-text-black w3-large">*Affiliation: </label><br>
+          <input class="w3-input w3-padding-16 w3-border" placeholder="Affiliation" required name="entry.1546455789"><br>
+          <label class="w3-tag w3-transparent w3-text-black w3-large">*Designation (student/postdoc/faculty): </label><br>
+          <input class="w3-input w3-padding-16 w3-border" placeholder="designation" required name="entry.776433471"><br>
+          <label class="w3-tag w3-transparent w3-text-black w3-large">*Abstract (can include basic latex formatting, but no user-defined macros): </label><br>
+          <textarea class="w3-input w3-padding-16 w3-border w3-round-small" required id="input" name="entry.1561449189">Let $R$ be a ring. Let $$S = R(q)$$.</textarea>
+          <a href="javascript:void();" onclick="preview()">Preview</a>
+          <div id="output" class="w3-container w3-padding-16 w3-border"></div><br><br>
+          <label class="w3-tag w3-transparent w3-text-black w3-large">Link to paper or preprint (desirable but not mandatory)</label><br>
+          <input class="w3-input w3-padding-16 w3-border" required name="entry.237032238"><br><br>
+      <p>Before submitting please make sure that all instructions have been followed.</p>
+      <input type="submit" class="w3-button w3-black">
+  </form>
   </div>
 </div>
+
+<!-- Script for rendering math -->
+<script src="submissions.js"></script>
 
 <!-- End page content -->
 </div>
@@ -137,6 +188,5 @@ function openMenu(evt, menuName) {
 }
 document.getElementById("myLink").click();
 </script>
-
 </body>
 </html>
