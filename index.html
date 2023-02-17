@@ -27,6 +27,40 @@ body, html {
 #input {
   resize: vertical;
 }
+#oinp:focus {
+  outline: none;
+}
+input[type="radio"] {
+  position: relative;
+  left: 24px;
+  margin-right: 24px;
+}
+.red {
+  color: #00ff00;
+  margin-right: 2px;
+}
+.expandable {
+  margin-bottom: 0;
+  transform: 250ms;
+  cursor: pointer;
+  background-color: lightgray;
+}
+.expandable-body {
+  margin-top: 0;
+  padding: 16px;
+  transition: 250ms opacity;
+}
+.expandable:hover {
+  background-color: white;
+}
+.col-hidden {
+  opacity: 0;
+  height: 0;
+  padding: 0px;
+}
+#cap-answer {
+  transition: 250ms;
+}
 </style>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -61,7 +95,7 @@ body, html {
 <!-- Header with image -->
 <header class="bgimg w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-middle w3-center">
-    <div style="background-color: #00000080;"><span class="w3-text-white" style="font-size: 50px;">Meru Combinatorics 2023</span></div>
+    <div style="background-color: #00000080;" class="w3-padding-16 w3-panel"><span class="w3-text-white" style="font-size: 50px;">Meru Combinatorics 2023</span></div>
   </div>
 </header>
 
@@ -76,10 +110,10 @@ body, html {
     <p>
       Meru stands for the sacred mountain of ancient Indian cosmology, and also for the triangle of binomial coefficients studied by Indian prosodists.
     </p>
-    <!-- <div class="w3-panel w3-leftbar w3-light-grey"> -->
-    <!--   <p><i>"Use products from nature for what it's worth - but never too early, nor too late." Fresh is the new sweet.</i></p> -->
-    <!--   <p>Chef, Coffeeist and Owner: Liam Brown</p> -->
-    <!-- </div> -->
+    <!-- <div class="w3-panel w3-leftbar w3-light-grey">
+      <p><i>"Use products from nature for what it's worth - but never too early, nor too late." Fresh is the new sweet.</i></p>
+      <p>Chef, Coffeeist and Owner: Liam Brown</p>
+    </div> -->
     <p><strong>Dates:</strong> 28 May to 1 June, 2023</p>
     <p><strong>Venue:</strong> Pondicherry University</p>
     <p><strong>Organising Committee:</strong></p>
@@ -110,19 +144,63 @@ body, html {
 
     <div id="minic" class="w3-container menu w3-padding-48 w3-card">
       <h5><a href="https://homepages.iitb.ac.in/~niranj/">Niranjan Balachandran</a>, IIT Bombay.</h5>
-      <p class="w3-text-grey">To be announced</p><br>
-    
+      <p class="w3-text-grey">Set Systems with Restricted Intersections</p>
+      <p>Consider the following extremal combinatorial problem. Supopse
+       $K\subset\mathbb{N}$ and let $\mathcal{F}\subset 2^{[n]}$ be a family of
+       sets such that for any distinct $A,B\in\mathcal{F}$, we have $|A\cap B|\in K$. How large can $|\mathcal{F}|$ be?
+       
+       As it turns out, this problem has its roots in design theory, and later
+       spawned several other problems of the same prototype, with further
+       refinements, finite vector field analogues, and so on, and ushered in a
+       variety of combinatorial techniques and problems.
+       
+       Recently, we introduced a fractional variant of the same problem. This
+       version also seems a robust notion in the sense that it has also spawned
+       several variants, and also brought in a variety of other problems, with
+       many of them still not settled completely.
+       
+       In these lectures, we shall first take a bird's-eye-view of the classical
+       problem (and the related variants) before delving into this recent
+       fractional variant, and present 3 recent results.
+       
+       (Based on joint work with several co-authors including Srimanta
+       Bhattacharya, Krishn Kher, Rogers Mathew, Tapas Mishra, and Brahadeesh
+       Sankarnarayanan)
+        </p>
       <h5><a href="https://www.iitk.ac.in/new/sk-pattanayak">Santosha Kumar Pattanayak</a>, IIT Kanpur.</h5>
-      <p class="w3-text-grey">To be announced</p><br>
+        <p class="w3-text-grey">Adventures in Schubert Calculus</p>
+	<p>In  this short course we  motivate  and  develop  the  basic  machinery  of Schubert calculus as a method for counting the number of subspaces of a particular dimension intersecting certain given subspaces, an important problem historically in enumerative geometry.  After introducing basic objects of study such as Schubert cells and Schubert varieties in the Grassmannian  and flag varieties, we discuss how  intersections  of  these  varieties  can  express  the motivating  enumerative  questions. We discuss  algebraic and geometric properties of these objects and see how  properties  of  these  objects  can  be  interpreted  algebraically  using  cohomology.   We  then  discuss symmetric function theory in order to establish an isomorphism from the cohomology  ring  of  the  Grassmannian  to  a  quotient  of  the  ring  of  symmetric functions.  We discuss the Duality theorem, Pieri's formula, Giambell's formula and finally the Littlewood-Richardson rule for multiplying arbitrary Schur polynomials, which via the aforementioned isomorphism allows us to compute in the cohomology ring - thus solving our original enumerative geometry problems.
+	</p>
     </div>
 
     <div id="contrib" class="w3-container menu w3-padding-48 w3-card">
-      <!-- <h5>Name</h5>
-      <p class="w3-text-grey">Title</p><br> -->
-      <h5>To be announced</h5>
+      <div class="expandable w3-panel">Sample Name</div>
+      <div class="expandable-body col-hidden w3-panel w3-text-black w3-white">
+        To be announced
+      </div>
+      <div class="expandable w3-panel">Sample Name</div>
+      <div class="expandable-body col-hidden w3-panel w3-text-black w3-white">
+        To be announced
+      </div>
+      <div class="expandable w3-panel">Sample Name</div>
+      <div class="expandable-body col-hidden w3-panel w3-text-black w3-white">
+        To be announced
+      </div>
     </div>  
   </div>
 </div>
+
+<!-- Script for expandable -->
+<script>
+  const expands = document.getElementsByClassName("expandable");
+  const expandsBody = document.getElementsByClassName("expandable-body");
+  for(var i = 0;i < expands.length;i++) {
+    expands[i].setAttribute("data", i);
+    expands[i].addEventListener("click", (event) => {
+      expandsBody[parseInt(event.srcElement.getAttribute("data"))].classList.toggle("col-hidden");
+    });
+  }
+</script>
 
 <!-- Contact/Area Container -->
 <div class="w3-container" id="submit" style="padding-bottom:32px;">
@@ -131,9 +209,8 @@ body, html {
     <p>To submit an abstract for a contributed talk please fill out the form below.
       Please keep the following points in mind.</p>
       <ol>
-        <li>Avoid latex formatting in the title.</li>
-        <li>Latex formatting can be used in the abstract, but do not use any user-defined macros.
-          You may check that your abstract is displayed correctly by clicking on "preview".</li>
+        <li>Latex formatting can be used in the title and abstract, but do not use any user-defined macros.
+          Please check that they rendered correctly by clicking on "preview".</li>
         <li>A link to a preprint or published paper will help us evaluate your submission better.</li>
         <li>Please check all fields carefully before hitting the "submit" button. Multiple submissions will be frowned upon.</li>
       </ol>
@@ -141,22 +218,35 @@ body, html {
     <h5>Submission Deadline: 1 May, 2023</h5>
     <!-- <img src="" class="w3-image" style="width:100%"> -->
     <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSdX58aCrc4zqfyBaD07oYgpTtUecwoyWGjetY3ascFm-Vppag/formResponse" target="_self" method="POST">
-          <label class="w3-tag w3-transparent w3-text-black w3-large">*Name: </label><br>
+          <label class="w3-tag w3-transparent w3-text-black w3-large"><span class="red">*</span>Name</label><br>
           <input class="w3-input w3-padding-16 w3-border" required ="text" placeholder="Name" name="entry.516985983"><br>
-          <label>*E-mail address</label><br>
+          <label><span class="red">*</span>E-mail address</label><br>
           <input class="w3-input w3-padding-16 w3-border" type="email" placeholder="E-mail" required name="entry.133805772"><br>
-          <label class="w3-tag w3-transparent w3-text-black w3-large">*Affiliation: </label><br>
+          <label class="w3-tag w3-transparent w3-text-black w3-large"><span class="red">*</span>Affiliation</label><br>
           <input class="w3-input w3-padding-16 w3-border" placeholder="Affiliation" required name="entry.1546455789"><br>
-          <label class="w3-tag w3-transparent w3-text-black w3-large">*Designation (student/postdoc/faculty): </label><br>
-          <input class="w3-input w3-padding-16 w3-border" placeholder="designation" required name="entry.776433471"><br>
-          <label class="w3-tag w3-transparent w3-text-black w3-large">*Abstract (can include basic latex formatting, but no user-defined macros): </label><br>
+          <label class="w3-tag w3-transparent w3-text-black w3-large"><span class="red">*</span>Designation</label><br>
+          
+          <input type="radio" required name="entry.776433471" value="Student">
+          <label>Student</label><br>
+          <input type="radio" required name="entry.776433471" value="Postdoc">
+          <label>Postdoc</label><br>
+          <input type="radio" required name="entry.776433471" value="Faculty">
+          <label>Faculty</label><br>
+          <input type="radio" required id="orb" name="entry.776433471" value="">
+          <label>Other: </label><input class="w3-transparent w3-border-0 w3-border-bottom" id="oinp" placeholder="Other"><br><br>
+          <label class="w3-tag w3-transparent w3-text-black w3-large"><span class="red">*</span>Title: </label><br>
+          <input id="titinput" class="w3-input w3-padding-16 w3-border" placeholder="Title" required name="entry.2062903441"><br>
+          <label class="w3-tag w3-transparent w3-text-black w3-large"><span class="red">*</span>Abstract (can include basic latex formatting, but no user-defined macros)</label><br>
           <textarea class="w3-input w3-padding-16 w3-border w3-round-small" required id="input" name="entry.1561449189">Let $R$ be a ring. Let $$S = R(q)$$.</textarea>
-          <a href="javascript:void();" onclick="preview()">Preview</a>
+          <a href="javascript:void(0);" onclick="preview()">Click here to preview LaTeX</a>
           <div id="output" class="w3-container w3-padding-16 w3-border"></div><br><br>
           <label class="w3-tag w3-transparent w3-text-black w3-large">Link to paper or preprint (desirable but not mandatory)</label><br>
-          <input class="w3-input w3-padding-16 w3-border" required name="entry.237032238"><br><br>
+          <input class="w3-input w3-padding-16 w3-border" name="entry.237032238"><br><br>
       <p>Before submitting please make sure that all instructions have been followed.</p>
-      <input type="submit" class="w3-button w3-black">
+      <span class="red">*</span><label id="cap-question"></label><br>
+      <input class="w3-input w3-padding-16 w3-border" id="cap-answer" type="number"><br><br>
+      <button class="w3-button w3-black" onclick="checkCaptcha(event)">I am a combinatorist</button>
+      <input type="submit" id="submit-button" class="w3-button w3-black w3-right" disabled><br>
   </form>
   </div>
 </div>
