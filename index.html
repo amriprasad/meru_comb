@@ -61,6 +61,10 @@ input[type="radio"] {
 #cap-answer {
   transition: 250ms;
 }
+#form-question button {
+  width: 100px;
+  padding: 4px;
+}
 </style>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -87,7 +91,7 @@ input[type="radio"] {
       <a href="#program" class="w3-button w3-block w3-black">PROGRAM</a>
     </div>
     <div class="w3-col s3">
-      <a href="#submit" class="w3-button w3-block w3-black">SUBMIT</a>
+      <a href="#submit" class="w3-button w3-block w3-black">REGISTER</a>
     </div>
   </div>
 </div>
@@ -118,8 +122,8 @@ input[type="radio"] {
       <p><i>"Use products from nature for what it's worth - but never too early, nor too late." Fresh is the new sweet.</i></p>
       <p>Chef, Coffeeist and Owner: Liam Brown</p>
     </div> -->
-    <p><strong>Dates:</strong> 28 May to 1 June, 2023</p>
-    <p><strong>Venue:</strong> Pondicherry University</p>
+    <p><strong>Dates:</strong> 29th to 31st May, 2023</p>
+    <p><strong>Venue:</strong> <a href="https://www.pondiuni.edu.in">Pondicherry University</a></p>
     <p><strong>Organising Committee:</strong></p>
     <ul>
       <li> A. Joseph Kennedy (Pondicherry University)</li>
@@ -211,8 +215,8 @@ input[type="radio"] {
 <!-- Contact/Area Container -->
 <div class="w3-container" id="submit" style="padding-bottom:32px;">
   <div class="w3-content" style="max-width:700px">
-    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">SUBMIT</span></h5>
-    <p>To submit an abstract for a contributed talk or poster please fill out the form below.
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">REGISTER</span></h5>
+    <p>To register for the conference or to submit an abstract for a contributed talk or poster please fill out the form below.
       Please keep the following points in mind.</p>
       <ol>
         <li>Latex formatting can be used in the title and abstract, but do not use any user-defined macros.
@@ -240,6 +244,14 @@ input[type="radio"] {
           <label>Faculty</label><br>
           <input type="radio" required id="orb" name="entry.776433471" value="">
           <label>Other: </label><input class="w3-transparent w3-border-0 w3-border-bottom" id="oinp" placeholder="Other"><br><br>
+
+          <div id="form-question" class="w3-panel">
+          <label>Would you like to submit a contributed talk?</label><br>
+          <button class="w3-button w3-black">Yes</button>
+          <button class="w3-button w3-grey">No</button>
+          </div>
+
+          <div id="contributed-form">
           <label class="w3-tag w3-transparent w3-text-black w3-large"><span class="red">*</span>Title: </label><br>
           <input id="titinput" class="w3-input w3-padding-16 w3-border" placeholder="Title" required name="entry.2062903441"><br>
           <label class="w3-tag w3-transparent w3-text-black w3-large"><span class="red">*</span>Abstract (can include basic latex formatting, but no user-defined macros)</label><br>
@@ -248,11 +260,12 @@ input[type="radio"] {
           <div id="output" class="w3-container w3-padding-16 w3-border"></div><br><br>
           <label class="w3-tag w3-transparent w3-text-black w3-large">Link to paper or preprint (desirable but not mandatory)</label><br>
           <input class="w3-input w3-padding-16 w3-border" name="entry.237032238"><br><br>
+          </div>
       <p>Before submitting please make sure that all instructions have been followed.</p>
       <span class="red">*</span><label id="cap-question"></label><br>
       <input class="w3-input w3-padding-16 w3-border" id="cap-answer" type="number"><br><br>
       <button class="w3-button w3-black" onclick="checkCaptcha(event)">I am a combinatorist</button>
-      <input type="submit" id="submit-button" class="w3-button w3-black w3-right" disabled><br>
+      <input type="submit" value="Register" id="submit-button" class="w3-button w3-black w3-right" disabled><br>
   </form>
   </div>
 </div>
