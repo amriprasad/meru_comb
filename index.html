@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Meru Combinatorics 2023</title>
+<title>Second Meru Combinatorics Conference 2024</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -16,7 +16,7 @@ body, html {
 .bgimg {
   background-position: center;
   background-size: cover;
-  background-image: url("meru.jpg");
+  background-image: url("The_dam_and_the_Bhim_temple_at_Bhimtal,_1895.jpg");
   min-height: 75%;
 }
 
@@ -44,8 +44,10 @@ input[type="radio"] {
   transform: 250ms;
   cursor: pointer;
   background-color: lightgray;
+  z-index: 200;
 }
 .expandable-body {
+  z-index: 0;
   margin-top: 0;
   padding: 16px;
   transition: 250ms opacity;
@@ -54,9 +56,7 @@ input[type="radio"] {
   background-color: white;
 }
 .col-hidden {
-  opacity: 0;
-  height: 0;
-  padding: 0px;
+  display: none;
 }
 #cap-answer {
   transition: 250ms;
@@ -81,25 +81,29 @@ input[type="radio"] {
 <!-- Links (sit on top) -->
 <div class="w3-top">
   <div class="w3-row w3-padding w3-black">
-    <div class="w3-col s3">
+    <div class="w3-col s2">
       <a href="#" class="w3-button w3-block w3-black">HOME</a>
     </div>
-    <div class="w3-col s3">
+    <div class="w3-col s2">
       <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
     </div>
-    <div class="w3-col s3">
+    <div class="w3-col s2">
       <a href="#program" class="w3-button w3-block w3-black">PROGRAM</a>
     </div>
-    <div class="w3-col s3">
+    <div class="w3-col s2">
       <a href="#submit" class="w3-button w3-block w3-black">REGISTER</a>
     </div>
+    <div class="w3-col s2">
+      <a href="#local" class="w3-button w3-block w3-black">LOCAL INFORMATION</a>
+    </div>
+
   </div>
 </div>
 
 <!-- Header with image -->
 <header class="bgimg w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-middle w3-center">
-    <div style="background-color: #00000080;" class="w3-padding-16 w3-panel"><span class="w3-text-white" style="font-size: 50px;">First Meru Combinatorics Workshop 2023</span></div>
+    <div style="background-color: #00000080;" class="w3-padding-16 w3-panel"><span class="w3-text-white" style="font-size: 50px;">Second Meru Combinatorics Conference 2024</span></div>
   </div>
 </header>
 
@@ -110,7 +114,7 @@ input[type="radio"] {
 <div class="w3-container" id="about">
   <div class="w3-content" style="max-width:700px">
     <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT THE CONFERENCE</span></h5>
-    <p>This is the first of a series of annual conferences on combinatorics in India: the Meru Annual Combinatorics Conference.
+    <p>This is the second of a series of annual conferences on combinatorics in India: the Meru Annual Combinatorics Conference.
 	The format of the series will be two mini-courses in combinatorics (interpreted broadly) as well as
 	contributed talks and posters.
 	  </p>
@@ -122,18 +126,22 @@ input[type="radio"] {
       <p><i>"Use products from nature for what it's worth - but never too early, nor too late." Fresh is the new sweet.</i></p>
       <p>Chef, Coffeeist and Owner: Liam Brown</p>
     </div> -->
-    <p><strong>Dates:</strong> 29th to 31st May, 2023</p>
-    <p><strong>Venue:</strong> <a href="https://www.pondiuni.edu.in">Pondicherry University</a></p>
-    <p><strong>Organising Committee:</strong></p>
+    <p><strong>Dates:</strong>1st to 3rd June, 2024</p>
+    <p><strong>Venue:</strong> <a href="www.gehu.ac.in">Graphic Era Hill University, Bhimtal Campus</a></p>
+    <p><strong>Organised by:</strong> Department of Mathematics, Pondicherry University</p>
+    <p><strong>Scientific Advisory Committee:</strong></p>
     <ul>
-      <li> A. Joseph Kennedy (Pondicherry University)</li>
+      <li> To be decided</li>
       <li> Arvind Ayyer (IISc)</li>
       <li> N. Narayanan (IIT Madras)</li>
       <li> Amritanshu Prasad (IMSc)</li>
       <li> S. Sivaramakrishnan (IIT Bombay)</li>
     </ul>
     <p>There is no registration fee, but all participants are required to register by filling the form below.
-	    Limited funding will be available for registered participants.</p>
+      Limited funding will be available for registered participants.</p>
+    <!--
+      <p><strong>Conference Poster:</strong> <a href="https://drive.google.com/file/d/1iEfkuifAMd3G-9jInZVrFSAdgqoT7-HA/view?usp=sharing">png</a> <a href="https://drive.google.com/file/d/1SHVPwwXxOlOa42rP1hS4YQo9OrVoQPZj/view?usp=share_link">pdf</a>
+    -->
   </div>
 </div>
 
@@ -153,122 +161,185 @@ input[type="radio"] {
     </div>
 
     <div id="minic" class="w3-container menu w3-padding-48 w3-card">
-      <h5><a href="https://homepages.iitb.ac.in/~niranj/">Niranjan Balachandran</a>, IIT Bombay.</h5>
-      <p class="w3-text-grey">Set Systems with Restricted Intersections</p>
-      <p>Consider the following extremal combinatorial problem. Supopse
-       $K\subset\mathbb{N}$ and let $\mathcal{F}\subset 2^{[n]}$ be a family of
-       sets such that for any distinct $A,B\in\mathcal{F}$, we have $|A\cap B|\in K$. How large can $|\mathcal{F}|$ be?
-       
-       As it turns out, this problem has its roots in design theory, and later
-       spawned several other problems of the same prototype, with further
-       refinements, finite vector field analogues, and so on, and ushered in a
-       variety of combinatorial techniques and problems.
-       
-       Recently, we introduced a fractional variant of the same problem. This
-       version also seems a robust notion in the sense that it has also spawned
-       several variants, and also brought in a variety of other problems, with
-       many of them still not settled completely.
-       
-       In these lectures, we shall first take a bird's-eye-view of the classical
-       problem (and the related variants) before delving into this recent
-       fractional variant, and present 3 recent results.
-       
-       (Based on joint work with several co-authors including Srimanta
-       Bhattacharya, Krishn Kher, Rogers Mathew, Tapas Mishra, and Brahadeesh
-       Sankarnarayanan)
+      <h5><a href="https://home.iitm.ac.in/jayanav/">A. V. Jayanthan</a>, IIT Madras.</h5>
+      <p class="w3-text-grey">TBA</p>
+      <p>TBA
         </p>
-      <h5><a href="https://www.iitk.ac.in/new/sk-pattanayak">Santosha Kumar Pattanayak</a>, IIT Kanpur.</h5>
-        <p class="w3-text-grey">Adventures in Schubert Calculus</p>
-	<p>In  this short course we  motivate  and  develop  the  basic  machinery  of Schubert calculus as a method for counting the number of subspaces of a particular dimension intersecting certain given subspaces, an important problem historically in enumerative geometry.  After introducing basic objects of study such as Schubert cells and Schubert varieties in the Grassmannian  and flag varieties, we discuss how  intersections  of  these  varieties  can  express  the motivating  enumerative  questions. We discuss  algebraic and geometric properties of these objects and see how  properties  of  these  objects  can  be  interpreted  algebraically  using  cohomology.   We  then  discuss symmetric function theory in order to establish an isomorphism from the cohomology  ring  of  the  Grassmannian  to  a  quotient  of  the  ring  of  symmetric functions.  We discuss the Duality theorem, Pieri's formula, Giambell's formula and finally the Littlewood-Richardson rule for multiplying arbitrary Schur polynomials, which via the aforementioned isomorphism allows us to compute in the cohomology ring - thus solving our original enumerative geometry problems.
-	</p>
+      <h5><a href="https://adixit.people.iitgn.ac.in">Atul Dixit</a>, IIT Gandhinagar.</h5>
+        <p class="w3-text-grey">TBA</p>
+    	<p>
+      TBA
+      </p>
     </div>
 
     <div id="contrib" class="w3-container menu w3-padding-48 w3-card">
-      <div class="expandable w3-panel">Sample Name</div>
+      <div class="expandable w3-panel">Sample name</div>
       <div class="expandable-body col-hidden w3-panel w3-text-black w3-white">
-        To be announced
+        <p>Sample title<br><hr>
+        Sample abstract.</p>
       </div>
-      <div class="expandable w3-panel">Sample Name</div>
-      <div class="expandable-body col-hidden w3-panel w3-text-black w3-white">
-        To be announced
-      </div>
-      <div class="expandable w3-panel">Sample Name</div>
-      <div class="expandable-body col-hidden w3-panel w3-text-black w3-white">
-        To be announced
-      </div>
-    </div>  
-  </div>
+    </div>
+<iframe src="https://calendar.google.com/calendar/embed?height=1400&wkst=2&bgcolor=%23ffffff&ctz=Asia%2FKolkata&title=Conference%20Schedule&showNav=0&mode=AGENDA&showDate=0&showCalendars=0&showTz=0&src=Y2NmYzZlZjFlMTNkZGJlZjI0M2U1ZjQ4MDVjMjBjMGZjZGI3MWFlNThhYTQ0ZmEzNmJkYjA1MmE2NDM3ZTNlOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23F09300" style="border:solid 1px #777" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
 </div>
-
-<!-- Script for expandable -->
-<script>
-  const expands = document.getElementsByClassName("expandable");
-  const expandsBody = document.getElementsByClassName("expandable-body");
-  for(var i = 0;i < expands.length;i++) {
-    expands[i].setAttribute("data", i);
-    expands[i].addEventListener("click", (event) => {
-      expandsBody[parseInt(event.srcElement.getAttribute("data"))].classList.toggle("col-hidden");
-    });
-  }
-</script>
 
 <!-- Contact/Area Container -->
 <div class="w3-container" id="submit" style="padding-bottom:32px;">
   <div class="w3-content" style="max-width:700px">
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">REGISTER</span></h5>
-    <p>To register for the conference or to submit an abstract for a contributed talk or poster please fill out the form below.
-      Please keep the following points in mind.</p>
-      <ol>
+    <p>Registration and submission of abstracts is now closed.</p>
+    <strong>INSTRUCTIONS FOR SUBMISSION OF A CONTRIBUTED TALK OR POSTER</strong>
+    <ol>
+        <li>The duration of each contributed talk is 25 minutes.</li>
+        <li>The list of selected contributed talks and posters will be announced on <strong>1st May 2023</strong>.</li>
         <li>Latex formatting can be used in the title and abstract, but do not use any user-defined macros.
           Please check that they rendered correctly by clicking on "preview".</li>
         <li>A link to a preprint or published paper will help us evaluate your submission better.</li>
         <li>Please check all fields carefully before hitting the "submit" button. Multiple submissions will be frowned upon.</li>
+        <li>It is recommended that you prepare your abstract separately and then paste it into the form.</li>
       </ol>
     </p>
-    <h5>Submission Deadline: 1 May, 2023</h5>
-    <!-- <img src="" class="w3-image" style="width:100%"> -->
+    <p><strong>Submission Deadline:</strong> 1st May, 2024</p>
+    <img src="" class="w3-image" style="width:100%">
     <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSdX58aCrc4zqfyBaD07oYgpTtUecwoyWGjetY3ascFm-Vppag/formResponse" target="_self" method="POST">
           <label class="w3-tag w3-transparent w3-text-black w3-large"><span class="red">*</span>Name</label><br>
           <input class="w3-input w3-padding-16 w3-border" required ="text" placeholder="Name" name="entry.516985983"><br>
-          <label><span class="red">*</span>E-mail address</label><br>
-          <input class="w3-input w3-padding-16 w3-border" type="email" placeholder="E-mail" required name="entry.133805772"><br>
-          <label class="w3-tag w3-transparent w3-text-black w3-large"><span class="red">*</span>Affiliation</label><br>
-          <input class="w3-input w3-padding-16 w3-border" placeholder="Affiliation" required name="entry.1546455789"><br>
-          <label class="w3-tag w3-transparent w3-text-black w3-large"><span class="red">*</span>Designation</label><br>
+           <label><span class="red">*</span>E-mail address</label><br> 
+           <input class="w3-input w3-padding-16 w3-border" type="email" placeholder="E-mail" required name="entry.133805772"><br> 
+           <label class="w3-tag w3-transparent w3-text-black w3-large"><span class="red">*</span>Affiliation</label><br> 
+           <input class="w3-input w3-padding-16 w3-border" placeholder="Affiliation" required name="entry.1546455789"><br> 
+           <label class="w3-tag w3-transparent w3-text-black w3-large"><span class="red">*</span>Designation</label><br> 
           
-          <input type="radio" required name="entry.776433471" value="Student">
-          <label>Student</label><br>
-          <input type="radio" required name="entry.776433471" value="Postdoc">
-          <label>Postdoc</label><br>
-          <input type="radio" required name="entry.776433471" value="Faculty">
-          <label>Faculty</label><br>
-          <input type="radio" required id="orb" name="entry.776433471" value="">
-          <label>Other: </label><input class="w3-transparent w3-border-0 w3-border-bottom" id="oinp" placeholder="Other"><br><br>
+           <input type="radio" required name="entry.776433471" value="Student"> 
+           <label>Student</label><br> 
+           <input type="radio" required name="entry.776433471" value="Postdoc"> 
+           <label>Postdoc</label><br> 
+           <input type="radio" required name="entry.776433471" value="Faculty"> 
+           <label>Faculty</label><br> 
+           <input type="radio" required id="orb" name="entry.776433471" value=""> 
+           <label>Other: </label><input class="w3-transparent w3-border-0 w3-border-bottom" id="oinp" placeholder="Other"><br><br> 
 
-          <div id="form-question" class="w3-panel">
-          <label>Would you like to submit a contributed talk?</label><br>
-          <button class="w3-button w3-black">Yes</button>
-          <button class="w3-button w3-grey">No</button>
-          </div>
+           <div id="form-question" class="w3-panel"> 
+           <label>Would you like to submit a contributed talk or poster?</label><br> 
+           <button class="w3-button w3-black">Yes</button> 
+           <button class="w3-button w3-grey">No</button> 
+           </div> 
 
-          <div id="contributed-form">
-          <label class="w3-tag w3-transparent w3-text-black w3-large"><span class="red">*</span>Title: </label><br>
-          <input id="titinput" class="w3-input w3-padding-16 w3-border" placeholder="Title" required name="entry.2062903441"><br>
-          <label class="w3-tag w3-transparent w3-text-black w3-large"><span class="red">*</span>Abstract (can include basic latex formatting, but no user-defined macros)</label><br>
-          <textarea class="w3-input w3-padding-16 w3-border w3-round-small" required id="input" name="entry.1561449189">Let $R$ be a ring. Let $$S = R(q)$$.</textarea>
-          <a href="javascript:void(0);" onclick="preview()">Click here to preview LaTeX</a>
-          <div id="output" class="w3-container w3-padding-16 w3-border"></div><br><br>
-          <label class="w3-tag w3-transparent w3-text-black w3-large">Link to paper or preprint (desirable but not mandatory)</label><br>
-          <input class="w3-input w3-padding-16 w3-border" name="entry.237032238"><br><br>
-          </div>
-      <p>Before submitting please make sure that all instructions have been followed.</p>
-      <span class="red">*</span><label id="cap-question"></label><br>
-      <input class="w3-input w3-padding-16 w3-border" id="cap-answer" type="number"><br><br>
-      <button class="w3-button w3-black" onclick="checkCaptcha(event)">I am a combinatorist</button>
-      <input type="submit" value="Register" id="submit-button" class="w3-button w3-black w3-right" disabled><br>
-  </form>
+           <div id="contributed-form"> 
+           <label class="w3-tag w3-transparent w3-text-black w3-large"><span class="red">*</span>Title: </label><br> 
+           <input id="titinput" class="w3-input w3-padding-16 w3-border" placeholder="Title" name="entry.2062903441"><br> 
+           <label class="w3-tag w3-transparent w3-text-black w3-large"><span class="red">*</span>Abstract (can include basic latex formatting, but no user-defined macros)</label><br> 
+           <textarea class="w3-input w3-padding-16 w3-border w3-round-small" id="input" name="entry.1561449189"></textarea> 
+           <a href="javascript:void(0);" onclick="preview()">Click here to preview LaTeX</a> 
+           <div id="output" class="w3-container w3-padding-16 w3-border"></div><br><br> 
+           <label class="w3-tag w3-transparent w3-text-black w3-large">Link to paper or preprint (desirable but not mandatory)</label><br> 
+           <input class="w3-input w3-padding-16 w3-border" name="entry.237032238"><br><br> 
+           </div> 
+       <p>Before submitting please make sure that all instructions have been followed.</p> 
+       <span class="red">*</span><label id="cap-question"></label><br> 
+       <input class="w3-input w3-padding-16 w3-border" id="cap-answer" type="number"><br><br> 
+       <button class="w3-button w3-black" onclick="checkCaptcha(event)">I am a combinatorist</button> 
+       <input type="submit" value="Register" id="submit-button" class="w3-button w3-black w3-right" disabled><br> 
+   </form> 
   </div>
 </div>
+
+
+<!-- Local Information Container -->
+<!-- <div class="w3-container" id="local">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">LOCAL INFORMATION</span></h5>
+    <p>
+      <strong>Conference Venue:</strong>
+      <a href = "https://goo.gl/maps/bg5Yxxyadr4cLzWbA?coh=178573&entry=tt">Seminar Hall, Deprtment of Mathematics</a>, Pondicherry Univerisity, Kalapet, Pondicherry 605014.
+    </p>
+    <p>
+      <strong>Accommodation:</strong>
+      All guest houses are within walking distance of Pondicherry University bus stop (2nd Gate).
+      <ul>
+	<li> <a href = "https://www.google.com/maps/place/Pondicherry+University+Convention+cum+Cultural+and+Guest+House/@12.0114942,79.8589107,18.25z/data=!4m6!3m5!1s0x3a5365c18160a4f5:0x61a465568e34881a!8m2!3d12.0124198!4d79.8577413!16s%2Fg%2F11h6slbb8p">Guest House 1:</a> (Pondicherry University Cultural cum Convention Centre and Guest House).</li>
+	<li> <a href="https://www.google.com/maps/place/Guest+house+II/@12.0206129,79.8596203,19.46z/data=!4m6!3m5!1s0x3a536590c077bb01:0x5edbb439169408a9!8m2!3d12.0208717!4d79.8591456!16s%2Fg%2F11jyjdl2j6">Guest house 2.</a></li>
+	<li><a href="https://www.google.com/maps/place/UGC+HRDC+Building/@12.0324247,79.8571461,17z/data=!4m6!3m5!1s0x3a5365b0e0245b91:0x4e1f0a1b1bf63b85!8m2!3d12.0323755!4d79.8591994!16s%2Fg%2F11c70d1r6q">UGC HRD centre.</a>
+	</li>
+      </ul>
+    </p>
+    <p>
+      <strong>Food:</strong>
+      <ul>
+      <li>Breakfast and Lunch will be provided to all participants at the venue.</li>
+      <li>A special dinner will be organized at <a href="https://www.google.com/maps/place/Hotel+Southernlands+Royale/@12.0210772,79.8602694,19z/data=!4m6!3m5!1s0x3a536508c19a4f81:0xa56ad7d4c58f4041!8m2!3d12.021204!4d79.8602822!16s%2Fg%2F11pp_k06jg">Hotel Southernlands Royale</a> on the first day of the conference at 7pm.</li>
+      <li>Participants are requested to make their own arrangements for dinner on other days.</li>
+      </ul>
+    </p>
+    <p>
+      <strong>Volunteers:</strong>
+    </p>
+    <p>
+      Postdocs:
+      <ul>
+	<li>Jaish – 9585366456</li>
+	<li>Sundaresan – 9488080147/ 7708148332</li>
+	<li>Prakash – 8903611713</li>
+	<li>Amlan – 9445967651/6374130937</li>
+	<li>Murugan – 9585111219</li>
+	<li>Muniasamy – 9445756785</li>
+      </ul>
+    </p> 
+    <p>
+      Professors:
+      <ul>
+	<li>Dr. SN. Fathima – 9655486156</li>
+	<li>Dr. T. Asir – 9486550157 / 9095050865</li>
+	<li>Dr. Kennedy – 9382822684 (emergencies only)</li>
+      </ul>
+    </p>
+    <p>
+      <strong>Schematic Map of Important Places:</strong>
+      <br>
+      <picture>
+	<img src="map.jpg" style="width:100%; height:auto;"
+      </picture>
+    </p>
+    <p>
+      <strong>Auto Drivers (available at Pondicherry University Gate 2):</strong>
+      <ul>
+	<li>Thiru - 9498813004/ 6380128467</li>
+	<li>Ramesh - 9345443174</li>
+	<li>Mani - 9499035212</li>
+	<li>Udhaya - 9585241067</li>
+	<li>Ragu - 9944049754</li>
+      </ul>
+    </p>
+    <p>
+      <strong>Auto Fares:</strong>
+      <ul>
+	<li>Pondicherry (Bus Stand / Railway Station / Airport) to Pondicherry University - Rs.400</li>
+	<li>Guest House (I / II) to Maths Dept (Venue) - Rs.50</li>
+	<li>HRDC Guest House to Maths Dept (Venue) - Rs.80</li>
+	<li>Guest House (I / II) / Maths Dept to Southern Lands Hotel (Dinner) - Rs.50</li>
+	<li>HRDC Guest House to Southern Lands Hotel (Dinner) - Rs.80</li>
+      </ul>
+      4 to 5 persons can share an auto.
+    </p>
+    <p>
+      <strong>Taxi Companies:</strong>
+      <ul>
+	<li>Sivasakthi travel: 9842333199/ 9443279892 (Rs 3500 for Chennai-Puducheri).</li>
+	<li>Pravein: 9994542699 (Rs 3000-3500 for Chennai-Puducheri).
+    </li></ul></p>
+    <p>
+      <strong>Coming by bus from Chennai:</strong>
+      Take an "ECR bus" (avoid buses that go to Pondicherry via Tindivanam).
+      On ECR, Pondicherry University is 12km before Pondicherry bus stand.
+      Alight at the Pondicherry University bus stand (see map).
+    </p>
+    <p>
+      <strong>Coming from Chennai Central Railway Station:</strong>
+      Walk from central station to Park town staion using the pedestrian subway.
+      Take the MRTS (local train) from Park town towards Velachery up to Kasturba Nagar.
+      Catch an ECR bus to Pondicherry from Madhya Kailash Junction just outside Kasturba Nagar railway station.
+    </p>
+</div>
+</div> -->
 
 <!-- Script for rendering math -->
 <script src="submissions.js"></script>
@@ -279,8 +350,21 @@ input[type="radio"] {
 <!-- Footer -->
 <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <!-- <p>Supported by <a href="https://www.imsc.res.in" class="w3-hover-text-green">IMSc Chennai</a>, <a href="https://www.iitm.ac.in" class="w3-hover-text-green">IIT Madras</a>, and <a href="https://www.pondiuni.edu.in" class="w3-hover-text-green">Pondicherry University</a></a></p> -->
 </footer>
-
+<!-- Script for expandable -->
+<script>
+  window.addEventListener("load", () => {
+    const expands = document.getElementsByClassName("expandable");
+    const expandsBody = document.getElementsByClassName("expandable-body");
+    for(var i = 0;i < expands.length;i++) {
+      expands[i].setAttribute("data", i);
+      expands[i].addEventListener("click", (event) => {
+        expandsBody[parseInt(event.srcElement.getAttribute("data"))].classList.toggle("col-hidden");
+      });
+    }
+  });
+</script>
 <script>
 // Tabbed Menu
 function openMenu(evt, menuName) {

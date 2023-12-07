@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <style>
+        #input {
+            resize: vertical;
+            width: 97vw;
+            position: relative;
+            top: 20px;
+            height: 300px;
+            margin-bottom: 50px;
+        }
+        #output {
+            width: 97vw;
+            top: 20px;
+            border: 2px solid #000;
+            position: relative;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+        }
+        .form {
+            background-color: aqua;
+            box-shadow: 2px 2px 2px 2px #00000074, 2px 2px 2px 2px #00000074;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/x-mathax-config">
+        window.MathJax.config.tex = {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        };
+    </script>
+    <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSdX58aCrc4zqfyBaD07oYgpTtUecwoyWGjetY3ascFm-Vppag/formResponse" target="_self" method="POST">
+        <div class="form">
+            <label>*Name: </label><br>
+            <input class="w3-input w3-padding-16 w3-border" required ="text" placeholder="Name" name="entry.516985983"><br>
+        </div>
+        <div class="form">
+            <label>*E-mail address</label><br>
+            <input class="w3-input w3-padding-16 w3-border" type="email" placeholder="E-mail" required name="entry.133805772"><br>
+        </div>
+        <div class="form">
+            <label>*Affiliation: </label><br>
+            <input class="w3-input w3-padding-16 w3-border" placeholder="Affiliation" required name="entry.1546455789"><br>
+        </div>
+        <div class="form">
+            <label>*Designation (Student/Postdoc/Faculty): </label><br>
+            <input class="w3-input w3-padding-16 w3-border" placeholder="designation" required name="entry.776433471"><br>
+        </div>
+        <div class="form">
+            <label>*Abstract (can include basic latex formatting, but no user-defined macros): </label><br>
+            <textarea required id="input" name="entry.1561449189">Let $R$ be a ring. Let $$S = R(q)$$.</textarea>
+            <a href="javascript:void();" onclick="preview()">Preview</a>
+            <div id="output"></div><br><br>
+        </div>
+        <div class="form">
+            <label>Link to paper or preprint (desirable but not mandatory)</label><br>
+            <input class="w3-input w3-padding-16 w3-border" required name="entry.237032238"><br><br>
+        </div>
+        <input type="submit">
+    </form>
+    <script src="submissions.js"></script>
+</body>
+</html>

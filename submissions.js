@@ -1,6 +1,25 @@
 const ipt = document.getElementById("input");
 const opt = document.getElementById("output");
 
+const contribElement = document.getElementById("contributed-form");
+window.addEventListener("load", () => {
+    contribElement.style.display = "none";
+});
+
+const formQues = document.getElementById("form-question");
+const formQuesButtons = formQues.getElementsByTagName("button");
+formQuesButtons[0].addEventListener("click", (ev) => {
+    ev.preventDefault();
+    contribElement.style.display = "";
+    contribElement.getElementsByTagName("textarea")[0].value = "Let $R$ be a ring. Let $$S = R(q)$$.";
+});
+formQuesButtons[1].addEventListener("click", (ev) => {
+    ev.preventDefault();
+    contribElement.style.display = "none";
+    contribElement.getElementsByTagName("input")[0].value = "";
+    contribElement.getElementsByTagName("textarea")[0].value = "";
+});
+
 const otherRadioButton = document.getElementById("orb");
 const otherInput = document.getElementById("oinp");
 
@@ -49,3 +68,32 @@ function factorial(n) {
     for(i = 2,k = 1;i <= n;k*=i,i++);
     return k;
 }
+
+const inputs = Array.from(document.getElementsByTagName("form")[0].getElementsByTagName("input"));
+window.addEventListener("load", () => {
+    try {
+        const formArray = JSON.parse(localStorage.getItem("form-data-input")).arr;
+        var i = 0;
+        inputs.forEach(input => {
+            input.value = formArray[i];
+            i++;
+        });
+    } catch(err) {
+        return;
+    }
+});
+function saveResponse() {
+    const formData = {
+        arr: []
+    };
+    var i = 0;
+    inputs.forEach(input => {
+        formData.arr.push(input.value);
+    });
+    localStorage.setItem("form-data-input", JSON.stringify(formData));
+}
+inputs.forEach(input => {
+    input.addEventListener("input", () => {
+        saveResponse();
+    });
+});
