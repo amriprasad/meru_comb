@@ -1,0 +1,148 @@
+\documentclass[a4paper, 12pt]{article}
+\oddsidemargin -.2in
+%\oddsidemargin -0.1in
+\renewcommand{\baselinestretch}{.8} %{1}
+\parindent .8in
+%\pagestyle{empty}
+\topmargin -.6in
+\evensidemargin -.2in
+%\evensidemargin -0.1in
+\textwidth 6.5in
+\makeindex
+%\makeindex
+\headsep .5in
+%\headsep 1.4in
+\textheight 8.8in  %8.6in
+%\flushbottom
+
+\usepackage{amsfonts}
+\usepackage{url}
+\usepackage{mathrsfs}
+
+\usepackage{amsmath, amsthm}
+
+\usepackage{amssymb}
+
+\usepackage{amscd}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+
+\makeatletter
+\newcommand{\leasts}{\let\CS=\@currsize\renewcommand{\baselinestretch}{1.5}\tiny\CS}
+\newcommand{\singlespacing}{\renewcommand{\baselinestretch}{1.5}}
+\newcommand{\oneandahalfspacing}{\let\CS=\@currsize\renewcommand{\baselinestretch}{1.2}\tiny\CS}
+\newcommand{\doublespacing}{\let\CS=\@currsize\renewcommand{\baselinestretch}{2.5}\tiny\CS}
+
+\def\A{{\mathcal A}}
+\def\D{{\mathcal D}}
+\def\NN{\mathbb{N}}
+\def\ZZ{\mathbb{Z}}
+\def\QQ{\mathbb{Q}}
+\def\RR{\mathbb{R}}
+\def\CC{\mathbb{C}}
+\def\PP{\mathbb{P}}
+
+
+\newcommand{\namelistlabel}[1]{\mbox{#1}\hfil}
+\newenvironment{namelist}[1]{%
+	\begin{list}{}
+		{
+			\let\makelabel\namelistlabel
+			\settowidth{\labelwidth}{#1}
+			\setlength{\leftmargin}{1.1\labelwidth}
+		}
+	}{%
+\end{list}}
+
+
+	\newcommand{\be}{\begin{equation}}
+		\newcommand{\ee}{\end{equation}}
+	\newcommand{\dist}{{\rm\,dist}}
+	\newcommand{\sspan}{{\rm\,span}}
+	\newcommand{\re}{{\rm Re\,}}
+	\newcommand{\im}{{\rm Im\,}}
+	\newcommand{\sgn}{{\rm sgn\,}}
+	\newcommand{\beano}{\begin{eqnarray*}}
+		\newcommand{\eeano}{\end{eqnarray*}}
+	\newcommand{\ba}{\begin{array}}
+		\newcommand{\ea}{\end{array}}
+	\newcommand{\hone}{\mbox{\hspace{1em}}}
+	\newcommand{\htwo}{\mbox{\hspace{2em}}}
+	\newcommand{\hthree}{\mbox{\hspace{3em}}}
+	\newcommand{\hfour}{\mbox{\hspace{4em}}}
+	\newcommand{\vone}{\vskip 2ex}
+	\newcommand{\von}{\vskip 1ex}
+	\newcommand{\vtwo}{\vskip 4ex}
+	\newcommand{\vthree}{\vskip 6ex}
+	\newcommand{\vfour}{\vspace*{8ex}}
+	\newcommand{\norm}{\|\;\;\|}
+	\newcommand{\integ}[4]{\int_{#1}^{#2}\,{#3}\,d{#4}}
+	\newcommand{\inp}[2]{\langle {#1} ,\,{#2} \rangle}
+	\newcommand{\vspan}[1]{{{\rm\,span}\{ #1 \}}}
+	\def \R{{{\rm I{\!}\rm R}}}
+	\def \B{{{\rm I{\!}\rm B}}}
+	\newcommand{\dm}[1]{ {\displaystyle{#1} } }
+	
+
+	\begin{document}
+\begin{center}
+	{\large\bf COMBINATORICS OF PARTITIONS}
+\end{center}
+	
+The fundamental theorems in $q$-series such as the $q$-bionomial theorem, Jacobi triple product identity and Euler’s pentagonal number theorem will be discussed followed by applications of the elementary series-product identities to partitions. In this part, the combinatorial techniques in partition theory involving generating functions as well as bijective proofs will be introduced. For example, Legendre's combinatorial interpretation of Euler's pentagonal theorem and its bijective proof due to Franklin will be discussed. Properties of Gaussian polynomials will also be considered,\\
+
+We will then focus on Ramanujan's well-known congruence for the partition function $p(n)$ modulo $5$, $7$, and $11$ and some of the partition statistics associated with them such as ranks and cranks. We will also introduce recently studied restricted partition functions which give simple combinatorial interpretations of some of the third order mock theta functions of Ramanujan.\\
+
+Finally, analytic and combinatorial versions of Rogers-Ramanujan identities will be discussed along with the applications of the latter. If time permits, we will also delve into miscellaneous topics in partition theory, for example, MacMahon's partition analysis and plane partitions.
+
+\end{document}
+
+%
+%\begin{center}
+%	\underline{\textbf{CONTENTS}}
+%\end{center}
+%
+%\begin{center}
+%	\underline{\textbf{Lecture 1}}
+%\end{center}
+%
+%\begin{itemize}
+%	
+%	
+%	
+%	\item \textbf{Fundamental theorems in q-series} $q$-binomial theorem, Jacobi triple product identity and Euler’s pentagonal number theorem.
+%	\smallskip
+%	
+%	\item \textbf{Applications of the elementary series-product identities to partitions:} Combinatorial techniques in partition theory: generating functions and bijective proofs, for example, Legendre's combinatorial interpretation of Euler's pentagonal theorem and its bijective proof due to Franklin; Gaussian polynomials and their properties.
+%	\smallskip
+%	
+%\end{itemize}
+%
+%\begin{center}
+%	\underline{\textbf{Lecture 2}}
+%\end{center}
+%
+%\begin{itemize}
+%	\item \textbf{Congruences for $p(n)$ and the associated partition statistics:} Congruences for the partition function $p(n)$ modulo $5$, $7$, and $11$, ranks, cranks – their properties and their generalizations.
+%	\smallskip
+%	
+%	\item \textbf{Restricted partition functions:} Connections with mock theta functions.
+%	\smallskip
+%	
+%\end{itemize}
+%
+%\begin{center}
+%	\underline{\textbf{Lecture 3}}
+%\end{center}
+%
+%\begin{itemize}
+%	
+%	\item \textbf{Rogers-Ramanujan identities:}  Analytic and combinatorial versions, applications in various areas.
+%	\smallskip
+%	
+%	\item \textbf{Miscellaneous topics in partitions:} Macmahon’s partition analysis, plane partitions, recent advances in partition theory.
+%	\smallskip\\
+%	
+%	
+%\end{itemize}
